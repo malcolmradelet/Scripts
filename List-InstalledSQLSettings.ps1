@@ -1,0 +1,1 @@
+﻿Invoke-Command -ComputerName TLT-SQL02 -ScriptBlock {&'C:\Program Files\Microsoft SQL Server\130\Setup Bootstrap\SQLServer2016\setup.exe' /Action=RunDiscovery }
