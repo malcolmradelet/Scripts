@@ -27,6 +27,9 @@ PS C:\>Get-SQLDiscoveryReport -ComputerName SQLServer01 -SharePath "\\FileServer
 #>
     [CmdletBinding()]
     param(
+        [Parameter(
+            Mandatory = $True,
+            Position = 0)]
         $ComputerName,
         [string]$SharePath
     )
