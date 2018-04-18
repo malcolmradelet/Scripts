@@ -6,9 +6,14 @@ Retrieve SQL Discovery reports and store them in a shared location.
 
 .DESCRIPTION
 
-This script uses the setup.exe bootstrap file left behind by SQL installations with the "/Action=RunDiscovery" flag to generate a "SQL Discovery Report".
-The report contains the installed SQL Server products, instances, and features, which can be useful to diagnose issues or prepare a cluster.
-After the reports are generated they are moved to a specified location with the name of the server appended to the filename.
+This script uses the setup.exe bootstrap file left behind by SQL installations with the "/Action=RunDiscovery" flag
+to generate a "SQL Discovery Report".
+
+The report contains the installed SQL Server products, instances, and features, which can be useful to diagnose
+issues or prepare a cluster.
+
+After the reports are generated they are moved to a specified location with the name of the server appended to the
+filename.
 
 .PARAMETER ComputerName
 Specifies the computer or ComputerName to query.
