@@ -27,11 +27,17 @@ PS C:\>Get-SQLDiscoveryReport -ComputerName SQLServer01 -SharePath "\\FileServer
 #>
     [CmdletBinding()]
     param(
-        [Parameter(
-            Mandatory = $True,
-            Position = 0)]
+        [Parameter(Mandatory)]
         $ComputerName,
-        [string]$SharePath
+
+        [Parameter(Mandatory)]
+        [ValidateScript( {
+                if ( -Not ($_ | Test-Path) ) {
+                    throw "Path does not exist"
+                }
+                return $true
+            })]
+        [System.IO.FileInfo]$SharePath
     )
     $date = Get-Date -Format yyyyMMdd
     if ($SharePath) {
