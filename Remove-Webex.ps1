@@ -2,7 +2,7 @@ $cred = Get-Credential
 $path = Read-Host "Please enter a location to import computers from (CSV)"
 #Remove Webex
 $ErrorActionPreference = "SilentlyContinue"
-$ComputerName = Import-Csv -Path D:\Scripts\WebexComputers.csv
+$ComputerName = Import-Csv -Path $path
 [System.Collections.ArrayList]$ConnectedComputer = @()
 
 Foreach ($c in $ComputerName.ComputerName) {
