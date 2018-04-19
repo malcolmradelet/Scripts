@@ -27,8 +27,10 @@ PS C:\>Get-SQLDiscoveryReport -ComputerName SQLServer01 -SharePath "\\FileServer
 #>
     [CmdletBinding()]
     param(
-        [Parameter(Mandatory)]
-        $ComputerName,
+        [Parameter( Mandatory = $true,
+            HelpMessage = "Enter one or more computer names separated by commas.")]
+        [Alias("CN", "MachineName", "Computers")]
+        [String[]]$ComputerName,
 
         [Parameter(Mandatory)]
         [ValidateScript( {
