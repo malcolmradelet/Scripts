@@ -41,7 +41,7 @@ Start-UDDashboard -Content {
                 Get-Process | Out-UDGridData
             } -PageSize 2
         }
-    } 
+    } -Theme (Get-UDTheme -Name "Azure")
 } -Port 8080
 
 Get-UDDashboard | Stop-UDDashboard
