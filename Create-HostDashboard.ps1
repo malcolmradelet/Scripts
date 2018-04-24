@@ -46,4 +46,6 @@ Function Initialize-Dashboard {
     } -Port 8080
 }
 
+Function Stop-Dashboards {
 Get-UDDashboard | Stop-UDDashboard
+}
